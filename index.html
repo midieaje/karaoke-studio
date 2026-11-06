@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unduh Karaoke Studio - Pembuat Teks Karaoke Berwarna</title>
+
+    <!-- Meta Tag Open Graph (preview saat link dibagikan ke WA/Medsos) -->
+    <meta property="og:title" content="Unduh Karaoke Studio Gratis" />
+    <meta property="og:description" content="Buat teks karaoke berwarna dengan menandai baris lagu dan merekam warna lewat mouse, langsung di peramban Anda." />
+    <meta property="og:image" content="https://raw.githubusercontent.com/midieaje/karaoke-studio/main/Screenshot_37.png" />
+
+    <!-- Script Utama Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3644380193150166"
+     crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f7f6f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: #ffffff;
+            max-width: 680px;
+            width: 100%;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e0d8;
+        }
+        h1 {
+            font-size: 24px;
+            margin-top: 0;
+            color: #1a1a1a;
+        }
+        p.description {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        .preview-box {
+            margin: 20px 0;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #fafafa;
+        }
+        .preview-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .ad-container {
+            margin: 20px 0;
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px dashed #cccccc;
+            border-radius: 8px;
+            text-align: center;
+            min-height: 250px;
+        }
+        .timer-status {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 15px 0;
+            color: #444;
+            text-align: center;
+        }
+        .download-btn {
+            background-color: #0076ff;
+            color: #ffffff;
+            border: none;
+            padding: 14px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s ease;
+        }
+        .download-btn:hover:not(:disabled) {
+            background-color: #0056b3;
+        }
+        .download-btn:disabled {
+            background-color: #cccccc;
+            color: #666666;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Karaoke Studio (Teks Karaoke Berwarna)</h1>
+    <p class="description">
+        Aplikasi web praktis untuk membuat teks karaoke: pilih lagu dan teks, tandai awal tiap baris saat lagu diputar, lalu rekam warna dengan menggeser mouse. Semua berjalan lokal di peramban Anda tanpa perlu mengunggah berkas ke server luar.
+    </p>
+
+    <!-- PREVIEW GAMBAR APLIKASI -->
+    <div class="preview-box">
+        <img src="Screenshot_37.png" alt="Preview Tampilan Karaoke Studio">
+    </div>
+
+    <!-- IKLAN GOOGLE ADSENSE (BANNER/DISPLAY AD) -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-3644380193150166"
+             data-ad-slot="3107145067"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- STATUS HITUNGAN MUNDUR -->
+    <div class="timer-status" id="statusText">
+        Mohon tunggu <span id="timer">15</span> detik untuk mengaktifkan tombol unduh...
+    </div>
+
+    <!-- TOMBOL UNDUH -->
+    <button id="downloadBtn" class="download-btn" disabled>Unduh Berkas Sekarang</button>
+</div>
+
+<script>
+    // Waktu tunggu dalam detik
+    let timeLeft = 15;
+
+    const timerElem = document.getElementById('timer');
+    const statusText = document.getElementById('statusText');
+    const downloadBtn = document.getElementById('downloadBtn');
+
+    // Berkas yang diunduh: karaoke-studio.html di repositori GitHub yang sama
+    const fileUrl = "https://raw.githubusercontent.com/midieaje/karaoke-studio/main/karaoke-studio.html";
+    const fileName = "karaoke-studio.html";
+
+    // Fungsi Timer Hitung Mundur
+    const countdown = setInterval(() => {
+        timeLeft--;
+        timerElem.textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+            statusText.innerHTML = "✅ <b>Berkas siap diunduh! Silakan klik tombol di bawah.</b>";
+            downloadBtn.removeAttribute('disabled');
+        }
+    }, 1000);
+
+    // Event Klik Tombol Unduh (memaksa unduh, bukan membuka sebagai teks)
+    downloadBtn.addEventListener('click', async () => {
+        try {
+            const res = await fetch(fileUrl);
+            if (!res.ok) throw new Error("Gagal mengambil berkas");
+            const blob = await res.blob();
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = fileName;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+        } catch (e) {
+            // Cadangan: buka langsung tautan berkas
+            window.location.href = fileUrl;
+        }
+    });
+</script>
+
+</body>
+</html>
