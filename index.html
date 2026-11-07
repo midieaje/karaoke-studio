@@ -1,181 +1,157 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unduh Karaoke Studio - Pembuat Teks Karaoke Berwarna</title>
-
-    <!-- Meta Tag Open Graph (preview saat link dibagikan ke WA/Medsos) -->
-    <meta property="og:title" content="Unduh Karaoke Studio Gratis" />
-    <meta property="og:description" content="Buat teks karaoke berwarna dengan menandai baris lagu dan merekam warna lewat mouse, langsung di peramban Anda." />
-    <meta property="og:image" content="https://raw.githubusercontent.com/midieaje/karaoke-studio/main/Screenshot_37.png" />
-
-    <!-- Script Utama Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3644380193150166"
-     crossorigin="anonymous"></script>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f7f6f0;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .container {
-            background: #ffffff;
-            max-width: 680px;
-            width: 100%;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            border: 1px solid #e2e0d8;
-        }
-        h1 {
-            font-size: 24px;
-            margin-top: 0;
-            color: #1a1a1a;
-        }
-        p.description {
-            color: #666;
-            font-size: 15px;
-            line-height: 1.5;
-        }
-        .preview-box {
-            margin: 20px 0;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            overflow: hidden;
-            background-color: #fafafa;
-        }
-        .preview-box img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        .ad-container {
-            margin: 20px 0;
-            padding: 10px;
-            background: #f9f9f9;
-            border: 1px dashed #cccccc;
-            border-radius: 8px;
-            text-align: center;
-            min-height: 250px;
-        }
-        .timer-status {
-            font-size: 16px;
-            font-weight: 600;
-            margin: 15px 0;
-            color: #444;
-            text-align: center;
-        }
-        .download-btn {
-            background-color: #0076ff;
-            color: #ffffff;
-            border: none;
-            padding: 14px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            width: 100%;
-            transition: background-color 0.2s ease;
-        }
-        .download-btn:hover:not(:disabled) {
-            background-color: #0056b3;
-        }
-        .download-btn:disabled {
-            background-color: #cccccc;
-            color: #666666;
-            cursor: not-allowed;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karaoke Studio: Pembuat Teks Karaoke Berwarna Gratis | Midieaje</title>
+<meta name="description" content="Buat teks karaoke berwarna: tandai awal tiap baris lagu saat diputar, lalu rekam warna dengan menggeser mouse. Gratis, langsung di peramban.">
+<link rel="canonical" href="https://midieaje.github.io/karaoke-studio/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Karaoke Studio: Pembuat Teks Karaoke Berwarna Gratis | Midieaje">
+<meta property="og:description" content="Buat teks karaoke berwarna: tandai awal tiap baris lagu saat diputar, lalu rekam warna dengan menggeser mouse. Gratis, langsung di peramban.">
+<meta property="og:url" content="https://midieaje.github.io/karaoke-studio/">
+<meta property="og:image" content="https://raw.githubusercontent.com/midieaje/karaoke-studio/main/Screenshot_37.png">
+<meta name="google-adsense-account" content="ca-pub-3644380193150166">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3644380193150166" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Karaoke Studio", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Web browser", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "IDR"}, "description": "Buat teks karaoke berwarna: tandai awal tiap baris lagu saat diputar, lalu rekam warna dengan menggeser mouse. Gratis, langsung di peramban.", "url": "https://midieaje.github.io/karaoke-studio/", "inLanguage": "id"}</script>
+<style>
+:root{--ink:#14211c;--soft:#46594f;--bg:#f2f5f1;--paper:#fff;--line:#d5ded7;--accent:#6d3fc4;--accent-d:#52309a;--tint:#ece4fa}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+a{color:var(--accent-d)}
+:focus-visible{outline:3px solid #f0a81c;outline-offset:3px}
+.top{background:var(--ink);color:#e6efe9}
+.top-in{max-width:960px;margin:0 auto;padding:12px 20px;display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap}
+.top a{color:#c4d8cb;text-decoration:none;font-size:.92rem}
+.top a:hover{color:#fff;text-decoration:underline}
+.brand{font-weight:700;color:#fff!important;font-size:1.05rem!important}
+.hero{background:var(--ink);color:#fff;padding:30px 20px 70px}
+.hero-in{max-width:960px;margin:0 auto}
+.hero h1{font-size:clamp(1.9rem,4.6vw,3rem);line-height:1.12;margin-bottom:14px;letter-spacing:-.01em}
+.hero p{color:#c4d8cb;font-size:1.08rem;max-width:60ch;margin-bottom:22px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;border:0;border-radius:8px;padding:12px 24px;font:700 1rem inherit;cursor:pointer}
+.btn:hover{background:var(--accent-d)}
+main{max-width:960px;margin:-36px auto 0;padding:0 20px 50px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:28px;margin-bottom:24px}
+.card h2{font-size:1.45rem;line-height:1.25;margin-bottom:10px}
+.card p{margin-bottom:12px;max-width:70ch}
+.card p:last-child{margin-bottom:0}
+.shot{margin:16px 0 4px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fafafa}
+.shot img{display:block;width:100%;height:auto}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;list-style:none;margin-top:14px}
+.feat li{background:var(--tint);border-radius:10px;padding:14px 16px;font-size:.95rem}
+.feat b{display:block;margin-bottom:2px}
+.steps{list-style:none;counter-reset:s;display:grid;gap:12px;margin-top:12px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:34px 1fr;gap:12px}
+.steps li:before{content:counter(s);width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:700}
+.video{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;background:#000;margin-top:14px}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.dl-card{border-left:6px solid var(--accent)}
+.files{display:grid;gap:12px;margin-top:14px}
+.file{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.file b{display:block;word-break:break-word}
+.file span{font-size:.9rem;color:var(--soft)}
+.note{font-size:.88rem;color:var(--soft);margin-top:12px}
+.err{display:none;color:#a3361f;font-size:.9rem;margin-top:10px}
+details{border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-top:10px;background:#fff}
+summary{cursor:pointer;font-weight:600}
+details p{margin-top:8px}
+.ad-slot{margin:0 0 24px;text-align:center;min-height:100px}
+.ad-label{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);margin-bottom:6px}
+.rel{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px}
+.rel a{display:block;border:1px solid var(--line);border-radius:10px;padding:14px 16px;text-decoration:none;color:var(--ink);background:#fff}
+.rel a:hover{border-color:var(--accent)}
+.rel b{display:block;color:var(--accent-d)}
+.rel span{font-size:.88rem;color:var(--soft)}
+footer{background:var(--ink);color:#a9bfb1;text-align:center;padding:28px 20px;font-size:.9rem}
+footer a{color:#dbe8e0;margin:0 8px}
+@media(max-width:640px){.file{grid-template-columns:1fr}.file .btn{width:100%}.card{padding:22px 18px}}
+</style>
 </head>
 <body>
-
-<div class="container">
-    <h1>Karaoke Studio (Teks Karaoke Berwarna)</h1>
-    <p class="description">
-        Aplikasi web praktis untuk membuat teks karaoke: pilih lagu dan teks, tandai awal tiap baris saat lagu diputar, lalu rekam warna dengan menggeser mouse. Semua berjalan lokal di peramban Anda tanpa perlu mengunggah berkas ke server luar.
-    </p>
-
-    <!-- PREVIEW GAMBAR APLIKASI -->
-    <div class="preview-box">
-        <img src="Screenshot_37.png" alt="Preview Tampilan Karaoke Studio">
-    </div>
-
-    <!-- IKLAN GOOGLE ADSENSE (BANNER/DISPLAY AD) -->
-    <div class="ad-container">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-3644380193150166"
-             data-ad-slot="3107145067"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
-
-    <!-- STATUS HITUNGAN MUNDUR -->
-    <div class="timer-status" id="statusText">
-        Mohon tunggu <span id="timer">15</span> detik untuk mengaktifkan tombol unduh...
-    </div>
-
-    <!-- TOMBOL UNDUH -->
-    <button id="downloadBtn" class="download-btn" disabled>Unduh Berkas Sekarang</button>
-</div>
-
+<div class="top"><div class="top-in">
+<a class="brand" href="../">Midieaje</a>
+<a href="../#tools">&larr; Semua alat web gratis</a>
+</div></div>
+<section class="hero"><div class="hero-in">
+<h1>Karaoke Studio: teks karaoke berwarna dengan mouse</h1>
+<p>Pilih lagu dan teksnya, tandai awal tiap baris, lalu rekam pergerakan warna dengan menggeser mouse. Semua berjalan di peramban Anda.</p>
+<a class="btn" href="#unduh">Unduh Karaoke Studio</a>
+</div></section>
+<main>
+<section class="card">
+<h2>Apa itu Karaoke Studio?</h2>
+<p>Karaoke Studio adalah aplikasi web untuk membuat tampilan teks karaoke yang warnanya berubah mengikuti nyanyian. Layarnya dibagi dua: panel lagu di bagian atas dan panel teks di bagian bawah.</p>
+<p>Anda memutar lagu, menandai di mana tiap baris dimulai, lalu menggeser mouse di atas teks untuk merekam kapan setiap bagian harus berwarna. Hasilnya bisa diputar ulang sebagai teks karaoke.</p>
+<div class="shot"><img src="Screenshot_37.png" alt="Tampilan Karaoke Studio" loading="lazy"></div>
+</section>
+<section class="card"><h2>Fitur utama</h2><ul class="feat">
+<li><b>Dua panel</b>Panel lagu di atas dan panel teks di bawah, sehingga lagu dan teks terlihat bersamaan.</li>
+<li><b>Penanda baris</b>Tandai awal tiap baris saat lagu diputar supaya pergantian baris pas dengan lagu.</li>
+<li><b>Rekam warna dengan mouse</b>Geser mouse di atas teks untuk merekam waktu perubahan warna kata demi kata.</li>
+<li><b>Berjalan di peramban</b>Tidak perlu memasang program tambahan.</li>
+<li><b>Gratis</b>Tanpa akun dan tanpa biaya.</li>
+</ul></section>
+<div class="ad-slot" data-ad="satu"></div>
+<section class="card"><h2>Cara memakai</h2><ol class="steps">
+<li><div>Unduh berkas <b>karaoke-studio.html</b> dari tombol di bawah, lalu buka di peramban.</div></li>
+<li><div>Pilih berkas lagu dan masukkan teks lagunya.</div></li>
+<li><div>Putar lagu dan tandai awal tiap baris di titik yang sesuai.</div></li>
+<li><div>Rekam warna: geser mouse di atas teks mengikuti nyanyian, lalu putar ulang untuk memeriksa hasilnya.</div></li>
+</ol></section>
+<section class="card dl-card" id="unduh"><h2>Unduh Karaoke Studio</h2><p>Satu berkas HTML yang bisa dibuka langsung di peramban.</p><div class="files">
+<div class="file"><div><b>karaoke-studio.html</b><span>Aplikasi Karaoke Studio, siap dibuka di peramban.</span></div><button class="btn dl" data-url="https://raw.githubusercontent.com/midieaje/karaoke-studio/main/karaoke-studio.html" data-name="karaoke-studio.html" data-mode="blob">Unduh Karaoke Studio</button></div>
+</div><p class="err" id="dlErr">Unduhan otomatis gagal, berkas dibuka di tab baru. Silakan simpan dari sana.</p>
+<p class="note">Berkas diambil dari repositori GitHub Midieaje.</p></section>
+<section class="card"><h2>Pertanyaan yang sering diajukan</h2>
+<details><summary>Apakah Karaoke Studio gratis?</summary><p>Ya, gratis dan tanpa akun.</p></details>
+<details><summary>Apakah lagu dan teks saya diunggah?</summary><p>Tidak. Lagu dan teks diproses di peramban Anda dan tidak dikirim ke server Midieaje.</p></details>
+<details><summary>Format lagu apa yang bisa dipakai?</summary><p>Format audio yang didukung peramban Anda, misalnya MP3 atau WAV. Jika sebuah berkas tidak terbaca, coba ubah ke MP3 terlebih dahulu.</p></details>
+<details><summary>Bagaimana jika penandaan baris kurang pas?</summary><p>Putar ulang dan perbaiki penanda barisnya. Penandaan yang teliti sangat memengaruhi ketepatan warna.</p></details>
+<details><summary>Apakah bisa dipakai dengan ponsel?</summary><p>Perekaman warna memakai mouse, jadi paling nyaman di komputer atau laptop.</p></details>
+</section>
+<div class="ad-slot" data-ad="dua"></div>
+<section class="card"><h2>Alat web gratis lainnya</h2><div class="rel">
+<a href="../alatpdf/"><b>Alat PDF</b><span>Pisahkan, gabungkan, dan kompres PDF di peramban.</span></a>
+<a href="../silsilah-keluarga/"><b>Silsilah Keluarga</b><span>Pohon keluarga dengan data di Google Sheets.</span></a>
+<a href="../perspective-fix/"><b>Perbaikan Perspektif</b><span>Luruskan foto dokumen seperti pemindai.</span></a>
+</div></section></main>
+<footer>
+<div><a href="../">Beranda</a><a href="../kebijakan-privasi.html">Kebijakan Privasi</a><a href="../kontak.html">Kontak</a></div>
+<p style="margin-top:10px">&copy; 2026 Midieaje. All Rights Reserved.</p>
+</footer>
 <script>
-    // Waktu tunggu dalam detik
-    let timeLeft = 15;
-
-    const timerElem = document.getElementById('timer');
-    const statusText = document.getElementById('statusText');
-    const downloadBtn = document.getElementById('downloadBtn');
-
-    // Berkas yang diunduh: karaoke-studio.html di repositori GitHub yang sama
-    const fileUrl = "https://raw.githubusercontent.com/midieaje/karaoke-studio/main/karaoke-studio.html";
-    const fileName = "karaoke-studio.html";
-
-    // Fungsi Timer Hitung Mundur
-    const countdown = setInterval(() => {
-        timeLeft--;
-        timerElem.textContent = timeLeft;
-
-        if (timeLeft <= 0) {
-            clearInterval(countdown);
-            statusText.innerHTML = "✅ <b>Berkas siap diunduh! Silakan klik tombol di bawah.</b>";
-            downloadBtn.removeAttribute('disabled');
-        }
-    }, 1000);
-
-    // Event Klik Tombol Unduh (memaksa unduh, bukan membuka sebagai teks)
-    downloadBtn.addEventListener('click', async () => {
-        try {
-            const res = await fetch(fileUrl);
-            if (!res.ok) throw new Error("Gagal mengambil berkas");
-            const blob = await res.blob();
-            const a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = fileName;
-            document.body.appendChild(a);
-            a.click();
-            a.remove();
-            setTimeout(() => URL.revokeObjectURL(a.href), 2000);
-        } catch (e) {
-            // Cadangan: buka langsung tautan berkas
-            window.location.href = fileUrl;
-        }
-    });
+const ADSENSE_CLIENT = "ca-pub-3644380193150166";
+// Isi Ad Slot ID dari AdSense. Kosongkan ("") untuk menyembunyikan slot.
+const ADSENSE_SLOTS = { satu: "3107145067", dua: "3107145067" };
+document.querySelectorAll('.ad-slot').forEach(function (box) {
+  const id = ADSENSE_SLOTS[box.dataset.ad];
+  if (!id) { box.style.display = 'none'; return; }
+  const l = document.createElement('span'); l.className = 'ad-label'; l.textContent = 'Iklan';
+  const ins = document.createElement('ins'); ins.className = 'adsbygoogle'; ins.style.display = 'block';
+  ins.setAttribute('data-ad-client', ADSENSE_CLIENT); ins.setAttribute('data-ad-slot', id);
+  ins.setAttribute('data-ad-format', 'auto'); ins.setAttribute('data-full-width-responsive', 'true');
+  box.appendChild(l); box.appendChild(ins);
+  try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
+});
+const errBox = document.getElementById('dlErr');
+document.querySelectorAll('.dl').forEach(function (btn) {
+  btn.addEventListener('click', async function () {
+    const url = btn.dataset.url, name = btn.dataset.name;
+    errBox.style.display = 'none';
+    if (btn.dataset.mode === 'direct') { window.location.href = url; return; }
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const blob = await res.blob();
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob); a.download = name;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
+    } catch (e) { errBox.style.display = 'block'; window.open(url, '_blank', 'noopener'); }
+  });
+});
 </script>
-
 </body>
 </html>
